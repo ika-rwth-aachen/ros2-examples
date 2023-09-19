@@ -1,0 +1,12 @@
+name: docker-ros
+
+on: [push, pull_request]
+
+jobs:
+  docker-ros:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ika-rwth-aachen/docker-ros@main
+        with:
+          base-image: rwthika/ros2:rolling
+          command: ros2 run examples_rclcpp_minimal_publisher publisher_member_function
